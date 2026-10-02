@@ -1,0 +1,292 @@
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Mali','Kanit',sans-serif;color:#6b5a7e;background:linear-gradient(160deg,#fff0f6 0%,#e8f6ff 50%,#f0ffe9 100%)}
+button,input{font-family:inherit}button{cursor:pointer}
+.hidden{display:none!important}
+#pfApp{position:fixed;top:0;left:0;right:0;bottom:0;overflow:auto;-webkit-overflow-scrolling:touch}
+.page{display:none;max-width:1100px;margin:auto}.page.active{display:block}
+.page-head{text-align:center;margin:10px 0 24px}.page-head small{display:block}.page-head h2{margin:6px 0 10px}.page-head p{margin:0;font-size:13px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px}
+.btn.full{width:100%}
+.game-card{position:relative;overflow:hidden}
+.pf-gate{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:18px;background:linear-gradient(160deg,#fff0f6,#e8f6ff 50%,#f0ffe9)}
+.pf-gcard{width:min(380px,100%);display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:28px;background:#fff;border:3px solid #ffd3e4;box-shadow:0 6px 0 #ffd3e4}
+.pf-glogo{text-align:center;font-size:22px;font-weight:700;color:#ff7aa8}
+.pf-gsub{margin:0 0 4px;text-align:center;font-size:13px;color:#9a8aaa}
+.pf-gin{width:100%;padding:12px 16px;font-size:16px;color:#6b5a7e;background:#fff;border:3px solid #ffd3e4;border-radius:18px;outline:none}
+.pf-gin:focus{border-color:#ff8fb8;box-shadow:0 0 0 4px rgba(255,143,184,.2)}
+.pf-gmsg{min-height:18px;margin:0;font-size:12px;color:#ff6b8a;text-align:center}
+.pf-glink{background:none;border:0;color:#ff7aa8;font-size:13px;font-weight:700;padding:4px}
+
+/* PET FARM LIFE servers - pastel cute theme (scoped to this page only) */
+#page-petfarm,#page-petfarm *{font-family:'Mali','Kanit',sans-serif}
+#page-petfarm.active{width:calc(100% - 24px);margin:18px auto 34px;padding:26px 16px 36px;border-radius:30px;color:#6b5a7e;
+ background:radial-gradient(#ffffffa8 2px,transparent 2.5px) 0 0/30px 30px,linear-gradient(160deg,#fff0f6 0%,#e8f6ff 48%,#f0ffe9 100%);
+ box-shadow:0 10px 40px rgba(255,150,190,.25),inset 0 0 0 4px #fff}
+#page-petfarm .page-head small{color:#ff9ec0;text-shadow:none;letter-spacing:3px}
+#page-petfarm .page-head h2{color:#ff7aa8;letter-spacing:1px;text-shadow:0 3px 0 #fff}
+#page-petfarm .page-head h2:after{height:5px;border-radius:3px;background:linear-gradient(90deg,#ffb3cf,#ffe08a,#b9e4ff,#c9f0c0)}
+#page-petfarm .page-head p{color:#9a8aaa}
+#page-petfarm .btn{clip-path:none;border-radius:999px;border:0;min-height:46px;font-size:14px;letter-spacing:.3px;font-weight:700;text-shadow:none;transition:transform .12s,box-shadow .12s}
+#page-petfarm .btn:after{display:none}
+#page-petfarm .btn:hover{transform:translateY(-2px)}
+#page-petfarm .btn:active{transform:translateY(2px)}
+#page-petfarm .btn.primary{color:#fff;background:linear-gradient(180deg,#ffb8d2,#ff8fb8);box-shadow:0 4px 0 #f06fa0}
+#page-petfarm .btn.primary:hover{box-shadow:0 6px 0 #f06fa0}
+#page-petfarm .btn.secondary{color:#8a7a99;background:#fff;box-shadow:0 4px 0 #e3d9f0}
+#page-petfarm .btn.secondary:hover{box-shadow:0 6px 0 #e3d9f0}
+#page-petfarm .btn.danger{color:#ff6b8a;background:#fff0f2;box-shadow:0 4px 0 #ffd0d8}
+#page-petfarm .btn:disabled{color:#c2b8cf;background:#f1ecf6;box-shadow:0 4px 0 #e2dbeb;transform:none;cursor:not-allowed}
+.pfm-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin:18px 0}
+#page-petfarm .pfm-srv.game-card{clip-path:none;border-image:none;border:3px solid #ffd3e4;border-radius:24px;background:#fff0f6;box-shadow:0 6px 0 #ffd3e4;padding:16px;display:flex;flex-direction:column;gap:9px;transition:transform .15s}
+#page-petfarm .pfm-srv.game-card:before,#page-petfarm .pfm-srv.game-card:after{display:none}
+#page-petfarm .pfm-srv.game-card:hover{transform:translateY(-4px);background:#fff0f6}
+#page-petfarm .pfm-srv:nth-child(5n+2){background:#eaf6ff;border-color:#c5e5fb;box-shadow:0 6px 0 #c5e5fb}
+#page-petfarm .pfm-srv:nth-child(5n+2):hover{background:#eaf6ff}
+#page-petfarm .pfm-srv:nth-child(5n+3){background:#effcea;border-color:#cdeec3;box-shadow:0 6px 0 #cdeec3}
+#page-petfarm .pfm-srv:nth-child(5n+3):hover{background:#effcea}
+#page-petfarm .pfm-srv:nth-child(5n+4){background:#fff8e1;border-color:#ffe9a6;box-shadow:0 6px 0 #ffe9a6}
+#page-petfarm .pfm-srv:nth-child(5n+4):hover{background:#fff8e1}
+#page-petfarm .pfm-srv:nth-child(5n+5){background:#f3ecff;border-color:#dccbf7;box-shadow:0 6px 0 #dccbf7}
+#page-petfarm .pfm-srv:nth-child(5n+5):hover{background:#f3ecff}
+.pfm-srv h3{font-size:17px;margin:0;color:#6b5a7e}
+.pfm-bar{height:10px;background:#ffffffb3;border-radius:6px;overflow:hidden;box-shadow:inset 0 0 0 2px #fff}
+.pfm-bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#ffb3cf,#ffd37a)}
+.pfm-meta{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#8a7a99}
+.pfm-tag.full{color:#ff6b8a}.pfm-tag.open{color:#3dbb85}.pfm-tag.empty{color:#a99bbd}
+.pfm-names{font-size:13px;color:#7a6a8a;min-height:34px;line-height:1.5;word-break:break-word}
+#page-petfarm .pfm-room{margin:18px 0;padding:20px;border:3px dashed #ffc6dc;border-radius:26px;background:#fff;box-shadow:0 6px 0 #ffe3ee;clip-path:none}
+.pfm-room-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+#page-petfarm .pfm-room small{color:#ff9ec0;font-size:11px;font-weight:700;letter-spacing:2px;text-shadow:none}
+#page-petfarm .pfm-room h3{margin:2px 0 0;color:#ff7aa8;font-size:19px}
+.pfm-count{font-weight:700;font-size:20px;color:#ff7aa8;background:#fff0f6;padding:4px 14px;border-radius:999px}
+.pfm-slots{display:grid;gap:10px;margin-bottom:12px}
+.pfm-slot{display:flex;align-items:center;gap:12px;padding:11px 14px;background:#fff8fb;border:2px solid #ffe0ec;border-radius:18px;font-size:15px;font-weight:600;color:#6b5a7e}
+.pfm-slot.empty{background:transparent;border:2px dashed #e3d9f0;color:#b7a9c7;font-weight:500}
+.pfm-slot.me{background:#fff6cf;border-color:#ffdf80}
+.pfm-slot b{font-size:26px;min-width:34px;text-align:center;line-height:1}
+.pfm-slot small{display:block;color:#a99bbd;font-size:11px;font-weight:500;margin-top:2px;letter-spacing:0}
+.pfm-slot em{margin-left:auto;font-style:normal;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:#ffe08a;color:#8a6a00}
+.pfm-slot.me em{background:#ffb3cf;color:#fff}
+.pfm-note{color:#9a8aaa;font-size:13px;line-height:1.55;margin:10px 0}
+.pfm-back{margin-top:8px}
+#page-petfarm .pfm-namebox input{width:100%;box-sizing:border-box;margin:10px 0 4px;padding:13px 16px;font-size:16px;color:#6b5a7e;background:#fff;border:3px solid #ffd3e4;border-radius:18px;outline:none}
+#page-petfarm .pfm-namebox input::placeholder{color:#cdbfdb}
+#page-petfarm .pfm-namebox input:focus{border-color:#ff8fb8;box-shadow:0 0 0 4px rgba(255,143,184,.2)}
+.pfm-namebtns{display:flex;gap:10px;margin-top:8px}.pfm-namebtns .btn{flex:1}
+
+/* PET FARM LIFE - landscape game stage */
+.pfm-stage{position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;overflow:hidden;background:radial-gradient(#ffffffa8 2px,transparent 2.5px) 0 0/30px 30px,linear-gradient(160deg,#fff0f6 0%,#e8f6ff 50%,#f0ffe9 100%)}
+.pfm-stage-in{position:absolute;top:0;left:0;width:100%;height:100%;box-sizing:border-box;padding:10px 14px;display:flex;flex-direction:column;gap:10px}
+.pfm-sbody{flex:1;min-height:0;display:flex;gap:12px}
+.pfm-field{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;padding:10px;border-radius:24px;border:3px solid #fff;background:linear-gradient(180deg,#e3f9d3,#c4f0ae);box-shadow:0 5px 0 #b5e49c}
+.pfm-fname{align-self:center;max-width:92%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:4px 14px;border-radius:999px;background:#ffffffc0;color:#5a8a3c;font-weight:700;font-size:15px}
+.pfm-fname:before{content:"🏡 "}
+.pfm-plots{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:8px}
+.pfm-plot{display:flex;align-items:center;justify-content:center;font-size:clamp(20px,6vh,34px);background:#f6dcbc;border:3px solid #eec79c;border-radius:16px}
+.pfm-fnote{margin:0;text-align:center;font-size:11px;color:#6a9a4c}
+.pfm-side{flex:0 0 min(42%,280px);min-height:0;overflow-y:auto;padding:8px;border-radius:24px;border:3px solid #fff;background:#ffffffb8}
+.pfm-stage .pfm-slots{gap:6px;margin:0}
+.pfm-stage .pfm-slot{padding:6px 10px;gap:8px;font-size:13px;border-radius:14px}
+.pfm-stage .pfm-slot b{font-size:20px;min-width:26px}
+
+/* PET FARM LIFE - top bar */
+.pfm-top{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.pfm-prof{display:flex;align-items:center;gap:8px;padding:4px 14px 4px 4px;border-radius:999px;background:#ffffffd9;border:3px solid #ffd3e4;box-shadow:0 3px 0 #ffe3ee;min-width:0}
+.pfm-av{width:40px;height:40px;flex:0 0 40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;background:#ffe9f1;border:3px solid #fff;box-shadow:0 0 0 2px #ffb3cf;overflow:hidden}
+.pfm-av img{width:100%;height:100%;object-fit:cover;display:block}
+.pfm-pinfo{min-width:0;display:flex;flex-direction:column;gap:2px}
+.pfm-pname{font-weight:700;font-size:13px;color:#6b5a7e;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.1}
+.pfm-lv{display:flex;align-items:center;gap:6px;font-size:11px;color:#ff7aa8}
+.pfm-xp{position:relative;width:86px;height:12px;border-radius:6px;background:#ffe3ee;overflow:hidden}
+.pfm-xp i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;background:linear-gradient(90deg,#ffd37a,#ffb3cf)}
+.pfm-xp span{position:relative;display:block;text-align:center;font-size:9px;line-height:12px;font-weight:700;color:#7a5a6a}
+.pfm-cur{display:flex;align-items:center;gap:6px;padding:4px 14px 4px 6px;border-radius:999px;background:#ffffffd9;border:3px solid #ffe9a6;box-shadow:0 3px 0 #fff1c4;font-size:14px;font-weight:700;color:#8a6a00}
+.pfm-cur:nth-of-type(3){border-color:#c5e5fb;box-shadow:0 3px 0 #e1f1fc;color:#3a86b8}
+.pfm-ci{font-size:20px;line-height:1}
+.pfm-sp{flex:1}
+.pfm-clock{display:flex;flex-direction:column;align-items:flex-end;padding:3px 14px;border-radius:18px;background:#ffffffd9;border:3px solid #dccbf7;box-shadow:0 3px 0 #ece1fb;line-height:1.15}
+.pfm-clock b{font-size:15px;color:#7a5fa8}.pfm-clock small{font-size:10px;color:#a99bbd}
+.pfm-gear{width:44px;height:44px;flex:0 0 44px;border:3px solid #fff;border-radius:50%;background:linear-gradient(180deg,#ffd3e4,#ffb3cf);box-shadow:0 4px 0 #f06fa0;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.pfm-gear:active{transform:translateY(2px);box-shadow:0 2px 0 #f06fa0}
+.pfm-set{position:absolute;top:62px;right:14px;z-index:6;display:flex;flex-direction:column;gap:8px;padding:12px;min-width:200px;border-radius:20px;background:#fff;border:3px solid #ffd3e4;box-shadow:0 6px 0 #ffe3ee,0 10px 30px rgba(255,150,190,.3)}
+.pfm-shead{display:flex;justify-content:space-between;align-items:center;margin:2px 4px 8px;font-size:13px;color:#ff7aa8}
+.pfm-shead span{font-weight:700;background:#fff0f6;padding:2px 10px;border-radius:999px}
+.pfm-modal{position:absolute;top:0;left:0;right:0;bottom:0;z-index:8;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(255,240,246,.72);backdrop-filter:blur(3px)}
+#page-petfarm .pfm-ncard{width:min(380px,100%);margin:0;padding:16px 18px}
+#page-petfarm .pfm-ncard h3{margin:2px 0 0}
+#page-petfarm .pfm-ncard .pfm-note{margin:4px 0}
+
+/* PET FARM LIFE - starter egg */
+.pfm-inv{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.pfm-egg{display:flex;align-items:center;gap:8px;padding:3px 14px 3px 8px;border-radius:999px;background:#ffffffd9;border:3px solid #ffd3e4;box-shadow:0 3px 0 #ffe3ee;font-size:13px;font-weight:700;color:#6b5a7e}
+.pfm-egg svg{display:block}
+#page-petfarm .pfm-gift{text-align:center}
+.pfm-gegg{display:flex;justify-content:center;margin:6px 0 2px}
+.pfm-gegg svg{animation:pfmWobble 1.6s ease-in-out infinite;transform-origin:50% 90%;filter:drop-shadow(0 6px 0 rgba(255,179,207,.45))}
+@keyframes pfmWobble{0%,100%{transform:rotate(0)}20%{transform:rotate(-8deg)}40%{transform:rotate(7deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(3deg)}}
+
+/* PET FARM LIFE - tabs + animal pen */
+.pfm-tabs{display:flex;align-items:center;gap:6px;flex:0 0 auto}
+.pfm-tab{padding:5px 12px;border-radius:999px;border:3px solid #fff;background:#ffffff80;color:#6a9a4c;font-weight:700;font-size:12px;cursor:pointer}
+.pfm-tab.on{background:#fff;color:#ff7aa8;box-shadow:0 3px 0 #b5e49c}
+.pfm-tabs .pfm-fname{margin-left:auto;align-self:auto;max-width:38%;font-size:12px}
+.pfm-pane{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px}
+.pfm-pen{position:relative;flex:1;min-height:0;overflow:hidden;border-radius:18px;border:3px dashed #b5e49c;background:linear-gradient(180deg,#eaffd9,#d3f5ba)}
+.pfm-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#6a9a4c;font-size:13px}
+.pfm-eggs{position:absolute;left:6px;top:6px;display:flex;gap:6px;z-index:2}
+.pfm-egg2{display:flex;flex-direction:column;align-items:center;gap:1px;padding:3px 8px;border-radius:14px;border:3px solid #ffd3e4;background:#ffffffd9;cursor:pointer;font-size:10px;font-weight:700;color:#7a5a6a}
+.pfm-egg2.ready{border-color:#ffb347;animation:pfmWobble 1s ease-in-out infinite;transform-origin:50% 90%}
+.pfm-pet{position:absolute;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%);transition:left 3s ease-in-out,top 3s ease-in-out;cursor:pointer;z-index:1}
+.pfm-pe{line-height:1;transition:transform .3s}
+.pfm-pe b{display:block;font-weight:400;animation:pfmBob .7s ease-in-out infinite}
+.pfm-pn{font-style:normal;font-size:10px;font-weight:700;color:#5a8a3c;background:#ffffffc8;padding:0 7px;border-radius:999px;white-space:nowrap}
+.pfm-pet.sel .pfm-pn{background:#ff8fb8;color:#fff}
+.pfm-pet.bump .pfm-pe{animation:pfmBump .45s}
+@keyframes pfmBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes pfmBump{0%,100%{transform:scale(1)}40%{transform:scale(1.3,.8)}70%{transform:scale(.9,1.2)}}
+.pfm-fx{position:absolute;z-index:3;font-size:20px;pointer-events:none;transform:translate(-50%,-100%);animation:pfmFx .9s ease-out forwards}
+@keyframes pfmFx{from{opacity:1;margin-top:0}to{opacity:0;margin-top:-34px}}
+.pfm-care{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:18px;background:#ffffffc8;min-height:46px}
+.pfm-chint{width:100%;text-align:center;font-size:12px;color:#6a9a4c}
+.pfm-cinfo{display:flex;flex-direction:column;min-width:0;max-width:26%}
+.pfm-cinfo b{font-size:13px;color:#6b5a7e;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pfm-cinfo small{font-size:10px;color:#a99bbd}
+.pfm-bars{flex:1;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:3px 8px}
+.pfm-bar2{display:flex;align-items:center;gap:4px;font-size:12px}
+.pfm-bar2>div{flex:1;height:8px;border-radius:4px;background:#e8e0f0;overflow:hidden}
+.pfm-bar2 i{display:block;height:100%;border-radius:4px;background:#7bd88f}.pfm-bar2 i.mid{background:#ffc857}.pfm-bar2 i.low{background:#ff6b8a}
+.pfm-acts{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:44%}
+.pfm-acts button{padding:5px 9px;border:0;border-radius:999px;background:linear-gradient(180deg,#ffb8d2,#ff8fb8);box-shadow:0 3px 0 #f06fa0;color:#fff;font-size:11px;font-weight:700;cursor:pointer}
+.pfm-acts button:active{transform:translateY(2px);box-shadow:0 1px 0 #f06fa0}
+.pfm-acts button:disabled{background:#f1ecf6;color:#c2b8cf;box-shadow:0 3px 0 #e2dbeb;cursor:not-allowed}
+
+
+/* แนวนอนจอเตี้ย (มือถือ): ย่อหัว/ระยะห่าง และจัดหน้า login เป็น 2 คอลัมน์ (คลาส pf-short ตั้งจาก JS ตามความสูงจริงหลังหมุน) */
+html.pf-short .page-head{margin:0 0 10px}
+html.pf-short .page-head p{display:none}
+html.pf-short .page-head h2{font-size:20px;margin:2px 0 6px}
+html.pf-short #page-petfarm.active{margin:8px auto;padding:12px 12px 16px}
+html.pf-short .pf-gate{overflow:auto;align-items:flex-start}
+html.pf-short .pf-gcard{width:min(680px,100%);margin:auto;padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:row dense;gap:8px 18px;align-items:start}
+html.pf-short .pf-glogo,html.pf-short .pf-gsub,html.pf-short .pf-gmsg,html.pf-short .pf-glink{grid-column:1}
+html.pf-short #gName,html.pf-short #gEmail,html.pf-short #gPass,html.pf-short #gGo,html.pf-short #gGoogle{grid-column:2}
+html.pf-short .pf-gcard .btn{min-height:40px;padding:8px 14px}
+html.pf-short .pf-gin{padding:9px 14px;font-size:15px}
+.pf-gate .btn{border:0;border-radius:999px;font-weight:700;font-size:14px;min-height:46px;color:#8a7a99;background:#fff;box-shadow:0 4px 0 #e3d9f0}
+.pf-gate .btn.primary{color:#fff;background:linear-gradient(180deg,#ffb8d2,#ff8fb8);box-shadow:0 4px 0 #f06fa0}
+.pf-gate .btn:active{transform:translateY(2px)}
+.pf-gate .btn:disabled{opacity:.6}
+
+/* ===== บ้าน: ห้อง + ตู้ฟักไข่ + หน้าต่าง ===== */
+.pfm-petlayer{position:absolute;inset:0}
+.pfm-pe{position:relative;font-size:calc(clamp(40px,13vh,60px)*var(--g,1));transition:transform .3s,font-size 2s}
+.pfm-pe b{position:relative}
+.pfm-pe:before{content:"";position:absolute;left:12%;right:12%;bottom:-2px;height:.14em;border-radius:50%;background:rgba(70,50,30,.2)}
+.st-baby .pfm-pe:after{content:"";position:absolute;left:18%;right:18%;top:-.04em;height:.3em;background:#fff6e8;border-radius:50% 50% 0 0/100% 100% 0 0;clip-path:polygon(0 0,100% 0,100% 70%,85% 100%,70% 65%,55% 100%,40% 65%,25% 100%,10% 65%,0 90%)}
+.pfm-house{border:3px solid #fff;background:linear-gradient(180deg,transparent 43%,#c99a68 43% 46%,transparent 46%),repeating-linear-gradient(90deg,#f1d3a6 0 46px,#e9c795 46px 48px) 0 100%/100% 54% no-repeat,radial-gradient(#ffffff90 2px,transparent 2.5px) 0 0/22px 22px,#ffe3ec}
+.pfm-house:after{content:"";position:absolute;left:30%;bottom:5%;width:38%;height:24%;border-radius:50%;background:#f7b6c9;opacity:.45;border:3px dashed #fff;pointer-events:none}
+.pfm-win{position:absolute;left:5%;top:6%;height:34%;aspect-ratio:1;border:5px solid #fff;border-radius:12px;box-shadow:0 0 0 3px #e7c9a0;overflow:hidden;background:#bfe6ff;transition:background 1.5s}
+.pfm-win:after{content:"";position:absolute;inset:0;background:linear-gradient(#fff,#fff) 50% 0/4px 100% no-repeat,linear-gradient(#fff,#fff) 0 50%/100% 4px no-repeat}
+.pfm-winsky{height:100%;display:flex;align-items:center;justify-content:center;font-size:clamp(20px,7vh,34px)}
+.wx-cloud .pfm-win{background:#d4e6f2}.wx-rain .pfm-win{background:#9db6cc}.wx-storm .pfm-win{background:#6c7a94}
+.pfm-inc{position:absolute;right:5%;top:5%;max-width:52%;padding:3px 8px 6px;border-radius:14px;border:3px solid #fff;background:#ffe6c4;box-shadow:0 3px 0 #e7c9a0}
+.pfm-inc-t{display:flex;justify-content:space-between;gap:8px;font-size:10px;font-weight:700;color:#8a6a40}
+.pfm-inc-t em{font-style:normal;color:#e0603a;position:relative;padding-left:10px}
+.pfm-inc-t em:before{content:"";position:absolute;left:0;top:3px;width:6px;height:6px;border-radius:50%;background:#ff8a4a;animation:pfmGlow 1.6s ease-in-out infinite}
+.pfm-inc-glass{display:flex;gap:6px;overflow-x:auto;min-height:56px;padding:3px 6px;border-radius:10px;background:rgba(255,240,170,.65);box-shadow:inset 0 0 14px rgba(255,170,60,.45)}
+.pfm-incempty{align-self:center;font-size:11px;color:#b09068}
+.pfm-egg2{border:0;background:transparent;padding:0 2px}
+.pfm-eg{position:relative;display:block}.pfm-eg svg{display:block}
+.pfm-eg .pfm-crack{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;transition:opacity .6s}
+.pfm-egg2.crk .pfm-crack{opacity:1}
+.pfm-egg2.near .pfm-eg{animation:pfmWobble .8s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes pfmGlow{50%{opacity:.25}}
+/* ===== ข้างนอก: ฟาร์ม + สภาพอากาศ ===== */
+.pfm-out{border:3px solid #fff;background:linear-gradient(180deg,#90d86c,#6cc050)}
+.pfm-sky{position:absolute;left:0;right:0;top:0;height:36%;overflow:hidden;background:#bfe6ff;transition:background 1.5s}
+.wx-cloud .pfm-sky{background:#cfe3f0}.wx-rain .pfm-sky{background:#9fb4c6}.wx-storm .pfm-sky{background:#59637d}
+.pfm-sky .sun{position:absolute;right:10%;top:10%;font-style:normal;font-size:clamp(24px,8vh,40px);animation:pfmSpin 40s linear infinite}
+.pfm-sky .cl{position:absolute;font-style:normal;font-size:clamp(22px,7vh,36px);opacity:.92;animation:pfmCloud 40s linear infinite}
+.wx-rain .cl{filter:brightness(.75)}.wx-storm .cl{filter:brightness(.45)}
+@keyframes pfmCloud{from{left:-12%}to{left:104%}}@keyframes pfmSpin{to{transform:rotate(360deg)}}
+.pfm-barn{position:absolute;left:3%;top:17%;z-index:1;display:flex;flex-direction:column;align-items:center;font-size:clamp(34px,13vh,54px);line-height:1}
+.pfm-barn small{font-size:10px;font-weight:700;color:#fff;background:#b07a4a;border-radius:8px;padding:0 6px}
+.pfm-out .pfm-plots{position:absolute;right:3%;top:44%;bottom:5%;width:36%;flex:none;gap:5px;z-index:1}
+.pfm-out .pfm-plot{font-size:clamp(14px,4vh,22px);border-width:2px;border-radius:10px;transition:background 1.5s}
+.wx-rain .pfm-plot,.wx-storm .pfm-plot{background:#d2a876}
+.pfm-wx{position:absolute;inset:0;z-index:200;pointer-events:none;overflow:hidden;background:rgba(20,30,60,0);transition:background 1.5s}
+.wx-rain .pfm-wx{background:rgba(20,30,60,.12)}.wx-storm .pfm-wx{background:rgba(20,30,60,.3)}
+.pfm-wx s{position:absolute;top:-12%;width:2px;height:14px;background:linear-gradient(#fff0,#d6ecff);animation:pfmRain .7s linear infinite}
+@keyframes pfmRain{to{top:105%;margin-left:-8px}}
+.pfm-wx .bolt{position:absolute;inset:0;background:#fff;opacity:0;animation:pfmBolt 6s infinite}
+@keyframes pfmBolt{0%,92%,100%{opacity:0}93%{opacity:.8}95%{opacity:0}96.5%{opacity:.55}98%{opacity:0}}
+.pfm-wxchip{border-color:#c5e5fb;box-shadow:0 3px 0 #e1f1fc;color:#3a86b8;font-size:13px;padding:4px 14px}
+
+/* ===== ร้านไข่ + แจ้งเตือน ===== */
+.pfm-toast{position:absolute;top:62px;left:50%;z-index:30;transform:translate(-50%,-160%);padding:8px 20px;border-radius:999px;background:#fff;border:3px solid #ffb347;box-shadow:0 4px 0 #ffd9a0;font-weight:700;font-size:14px;color:#c26a00;opacity:0;pointer-events:none;white-space:nowrap}
+.pfm-toast.show{animation:pfmToast 4s ease forwards}
+@keyframes pfmToast{0%{opacity:0;transform:translate(-50%,-160%)}8%,88%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-160%)}}
+.pfm-shop{flex:1;min-height:0;display:flex;flex-direction:column;gap:6px;padding:8px;border-radius:18px;border:3px solid #fff;background:#fff8e8;overflow:hidden}
+.pfm-shop-h{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#8a6a40}
+.pfm-shop-h span b{color:#e0603a;font-variant-numeric:tabular-nums}
+.pfm-shop-list{flex:1;min-height:0;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px;align-content:start}
+.pfm-item{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px;border-radius:14px;background:#fff;border:2px solid #ffe0b0;font-size:12px;color:#6b5a7e}
+.pfm-item.out{opacity:.55}
+.pfm-item small{font-size:10px;color:#a99bbd}
+.pfm-item button{margin-top:2px;padding:4px 16px;border:0;border-radius:999px;background:linear-gradient(180deg,#ffb8d2,#ff8fb8);box-shadow:0 3px 0 #f06fa0;color:#fff;font-size:11px;font-weight:700}
+.pfm-item button:disabled{background:#f1ecf6;color:#c2b8cf;box-shadow:0 3px 0 #e2dbeb;cursor:not-allowed}
+
+/* ===== ปลูกข้าว + เครื่องบด ===== */
+.pfm-petlayer{pointer-events:none}.pfm-pet{pointer-events:auto}
+.pfm-tabs{overflow-x:auto}.pfm-tab{white-space:nowrap;padding:5px 10px}
+.pfm-out .pfm-plot{cursor:pointer}
+.pfm-plot.empty{background:#e8c9a0;border-style:dashed;opacity:.8}
+.pfm-plot.ripe{border-color:#ffd24a;animation:pfmRipe 1.2s ease-in-out infinite}
+@keyframes pfmRipe{50%{box-shadow:0 0 10px 3px rgba(255,210,74,.8)}}
+.pfm-mill{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;color:#6b5a7e;font-size:13px}
+.pfm-mach{font-size:clamp(44px,16vh,70px);line-height:1}
+.pfm-mach.run{animation:pfmSpin 1s linear infinite}
+.pfm-mside{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.pfm-mside small{color:#a99bbd;font-size:11px}
+.pfm-mbar{width:160px;height:10px;border-radius:5px;background:#ece4f4;overflow:hidden}
+.pfm-mbar i{display:block;height:100%;background:linear-gradient(90deg,#ffd37a,#ff8fb8);transition:width 1s linear}
+
+.pfm-fe{font-size:30px;line-height:1.2}
+
+.pfm-lay{position:absolute;top:-6px;right:-12px;z-index:2;padding:0 5px;font-style:normal;text-decoration:none;font-size:14px;background:#fff;border:2px solid #ffd24a;border-radius:999px;cursor:pointer;animation:pfmBob .8s ease-in-out infinite}
+
+/* ===== เควสประจำวัน ===== */
+.pfm-qbtn{position:relative}
+.pfm-qbtn em{position:absolute;top:-5px;right:-5px;min-width:18px;height:18px;padding:0 4px;box-sizing:border-box;border-radius:9px;background:#ff5f6d;border:2px solid #fff;color:#fff;font:700 11px/14px sans-serif;font-style:normal;text-align:center}
+#page-petfarm .pfm-quest{width:min(480px,100%);max-height:100%;display:flex;flex-direction:column;gap:6px;padding:12px 14px;overflow:hidden}
+.pfm-qhead{display:flex;justify-content:space-between;align-items:flex-start}
+.pfm-qx{width:30px;height:30px;border:0;border-radius:50%;background:#fff0f6;color:#ff7aa8;font-size:15px;font-weight:700;cursor:pointer}
+.pfm-qsub{display:flex;justify-content:space-between;font-size:12px;color:#9a8aaa}
+.pfm-qsub b{color:#e0603a;font-variant-numeric:tabular-nums}
+.pfm-qlist{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:6px}
+.pfm-q{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:14px;background:#fff8e8;border:2px solid #ffe0b0}
+.pfm-q.ready{border-color:#ffb347;background:#fff3d6}
+.pfm-q.claimed{opacity:.55}
+.pfm-qi{flex:0 0 30px;text-align:center;font-size:24px}
+.pfm-qm{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.pfm-qm b{font-size:12px;color:#6b5a7e;line-height:1.2}
+#page-petfarm .pfm-quest .pfm-qm small{font-size:10px;letter-spacing:0;font-weight:400;color:#a99bbd}
+.pfm-qbar{height:7px;border-radius:4px;background:#ffe3ee;overflow:hidden}
+.pfm-qbar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#ffd37a,#ffb3cf)}
+.pfm-qr{display:flex;flex-direction:column;gap:1px;font-size:11px;font-weight:700;color:#8a6a00;white-space:nowrap}
+.pfm-q button{padding:5px 12px;border:0;border-radius:999px;background:linear-gradient(180deg,#ffb8d2,#ff8fb8);box-shadow:0 3px 0 #f06fa0;color:#fff;font-size:11px;font-weight:700;white-space:nowrap;cursor:pointer}
+.pfm-q button:disabled{background:#f1ecf6;color:#c2b8cf;box-shadow:0 3px 0 #e2dbeb;cursor:not-allowed}
+
+.pfm-qtt{display:flex;align-items:center;gap:5px}
+.pfm-qt{flex:0 0 auto;font-style:normal;font-size:9px;font-weight:700;line-height:1;padding:3px 7px;border-radius:8px;color:#fff}
+.pfm-qt.t-e{background:#5fc98f}.pfm-qt.t-m{background:#ffb347}.pfm-qt.t-h{background:#ff6b8a}
+
+/* ===== ตัวละครผู้เล่น (เดินด้วยการแตะ) ===== */
+.pfm-me{position:absolute;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%);pointer-events:none;z-index:1}
+.pfm-me .pfm-pe b{animation:none}
+.pfm-me.walking .pfm-pe b{animation:pfmWalk .34s ease-in-out infinite}
+.pfm-me .pfm-pn{background:#ffe08a;color:#8a5a00}
+@keyframes pfmWalk{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-7px) rotate(5deg)}}
+.pfm-tapm{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:3px solid #fff;background:rgba(255,143,184,.45);box-shadow:0 0 0 2px #ff8fb8;pointer-events:none;z-index:2;animation:pfmTap .7s ease-out forwards}
+@keyframes pfmTap{from{opacity:1;transform:scale(.4)}to{opacity:0;transform:scale(1.5)}}
+.pfm-me .pfm-pe{font-size:clamp(32px,10vh,48px)}
